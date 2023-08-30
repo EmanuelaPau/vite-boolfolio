@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="container">
-                    <div class="row d-flex flex-wrap">
-                        <div class="col-4 ">
-                            <ProjectCard class="m-2" v-for="project in this.projects" :projectTitle=project.title
-                                :projectAuthor=project.author :projectContent=project.content :projectImage=project.image />
-                        </div>
+                    <div class="row d-flex flex-wrap justify-content-center">
+                        <ProjectCard class="col-3 m-3" v-for="project in this.projects" :projectTitle=project.title
+                            :projectAuthor=project.author :projectContent=project.content :projectImage=project.image
+                            :typeColor=project.type.color :typeName=project.type.name :technologies=project.technologies
+                            :technologyName=project.technologies.title />
                     </div>
                 </div>
             </div>
