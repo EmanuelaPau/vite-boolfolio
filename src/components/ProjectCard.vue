@@ -1,27 +1,18 @@
-
 <template>
-    <div>
-        Main
-        <ProjectCard />
+    <div class="project-cards">
+        Project card
+        <!-- <p v-for="project in projects">{{ project.title }}</p>  -->
     </div>
 </template>
 
 <script>
-import ProjectCard from './ProjectCard.vue'
-
+// < !-- import HelloWorld from './HelloWorld.vue' -->
 export default {
-    name: 'AppHeader',
+    name: 'ProjectCard',
     components: {
-        ProjectCard,
     },
     data() {
         return {
-
-            // links: [
-            //	'gino',
-            //	'ciao',
-            //	]
-
 
         }
     },

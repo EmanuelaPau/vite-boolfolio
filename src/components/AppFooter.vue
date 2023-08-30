@@ -15,11 +15,6 @@ export default {
     data() {
         return {
 
-            // links: [
-            //	'gino',
-            //	'ciao',
-            //	]       
-
         }
     },
     methods() {

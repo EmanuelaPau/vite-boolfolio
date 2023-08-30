@@ -1,14 +1,13 @@
 <template>
   <body>
-    <!-- <HelloWorld /> -->
     <header>
-      <AppHeader />
+      <!-- <AppHeader /> -->
     </header>
     <main>
       <AppMain />
     </main>
     <footer>
-      <AppFooter />
+      <!-- <AppFooter /> -->
     </footer>
   </body>
 </template>
@@ -18,6 +17,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import axios from 'axios';
 export default {
   name: 'App',
   components: {
@@ -25,7 +25,40 @@ export default {
     AppHeader,
     AppMain,
     AppFooter,
-  }
+  },
+  // < !-- import HelloWorld from './HelloWorld.vue' -->
+  data() {
+    return {
+
+      projects: [
+      ],
+      apiUrl: 'http://127.0.0.1:8000/api/projects',
+
+    }
+  },
+  methods: {
+    getProjects() {
+      axios.get(this.apiUrl, {
+        params: {
+          // ID: 12345
+        }
+      })
+        .then((response) => {
+          console.log(response.data.results.data);
+          this.projects = response.data.results.data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .finally(function () {
+          // always executed
+        });
+    }
+  },
+
+  created() {
+    this.getProjects();
+  },
 }
 
 </script>
