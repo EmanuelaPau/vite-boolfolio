@@ -7,7 +7,7 @@
 
 <script>
 // < !-- import HelloWorld from './HelloWorld.vue' -->
-
+import axios from 'axios';
 export default {
     name: 'AppMain',
     components: {
@@ -15,14 +15,33 @@ export default {
     data() {
         return {
 
-            // links: [
-            //	'gino',
-            //	'ciao',
-            //	]       
+            projects: [
+            ],
+            apiUrl: 'http://127.0.0.1:8000/api/projects',
 
         }
     },
-    methods() {
+    methods: {
+        getProjects() {
+            axios.get(this.apiUrl, {
+                params: {
+                    // ID: 12345
+                }
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+        }
+    },
+
+    created() {
+        this.getProjects();
     },
 }	
 </script>
