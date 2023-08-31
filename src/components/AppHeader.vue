@@ -11,14 +11,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Posts</a>
+                        <li v-for="link in links">
+                            <router-link class="nav-link" :to="{ name: link.route }">
+                                {{ link.name }}
+                            </router-link>
+
                         </li>
                     </ul>
                 </div>
@@ -28,19 +25,26 @@
 </template>
 
 <script>
-// < !-- import HelloWorld from './HelloWorld.vue' -->
-
 export default {
     name: 'AppHeader',
     components: {
     },
     data() {
         return {
-
-            // links: [
-            //	'gino',
-            //	'ciao',
-            //	]       
+            links: [
+                {
+                    route: 'homepage',
+                    name: 'Homepage'
+                },
+                {
+                    route: 'about',
+                    name: 'About Us'
+                },
+                {
+                    route: 'about',
+                    name: 'Posts'
+                },
+            ]
 
         }
     },
