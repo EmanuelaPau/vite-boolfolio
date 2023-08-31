@@ -41,8 +41,8 @@ export default {
                     name: 'About Us'
                 },
                 {
-                    route: 'about',
-                    name: 'Posts'
+                    route: 'index',
+                    name: 'index'
                 },
             ]
 
