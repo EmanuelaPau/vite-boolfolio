@@ -1,7 +1,7 @@
 <template>
     <div class="project-cards">
         <!-- Project card -->
-        <div class="card p-2" style="width: 18rem;">
+        <div class="card p-2 m-2 h-auto" style="">
             <img class="card-img-top" src="{{projectImage}}" alt="Card image cap">
             <div class="card-body">
                 <h3 class="card-title mb-3">{{ projectTitle }}</h3>
@@ -12,19 +12,21 @@
                         {{ typeName }}
                     </h5>
                 </div>
-                <div class="d-flex flex-wrap justify-content-center">
-                    <span v-for="technology in technologies" class="badge rounded-pill text-bg-primary mx-1">{{
+                <div class="d-flex flex-wrap justify-content-center mb-5">
+                    <span v-for="technology in technologies" class="badge rounded-pill text-bg-success mx-1">{{
                         technology.name }}</span>
                 </div>
+                <router-link class="btn btn-primary" :to="{ name: 'singlepost' }">
+                    Go to Project
+                </router-link>
+
                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
         </div>
-        <!-- <p v-for="project in projects">{{ project.title }}</p>  -->
     </div>
 </template>
 
 <script>
-// < !-- import HelloWorld from './HelloWorld.vue' -->
 export default {
     name: 'ProjectCard',
     components: {

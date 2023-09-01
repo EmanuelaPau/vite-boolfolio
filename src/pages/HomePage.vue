@@ -3,7 +3,7 @@
     <div class="container my-home-main">
         <div class="row">
             <div class="col-12">
-                <h1 class="mb-3">
+                <h1 class="text-center mb-5">
                     Home Page
                 </h1>
                 <p>

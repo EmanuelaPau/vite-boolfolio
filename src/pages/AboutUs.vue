@@ -1,9 +1,9 @@
 
 <template>
-    <div class="container">
+    <div class="container my-about-us">
         <div class="row">
             <div class="col-12">
-                <h1>
+                <h1 class="text-center mb-5">
                     About Us
                 </h1>
             </div>
